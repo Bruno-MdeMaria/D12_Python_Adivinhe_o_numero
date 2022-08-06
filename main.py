@@ -1,8 +1,14 @@
 import random
-from tracemalloc import start
+from art import logo
 
 def num_mente():
     return random.randint(1,100)
+
+print(logo)
+print("\nBem vindo ao jogo Adivinhe o Número!")
+print("Estou pensando em número de 1 a 100. Tente adivinhar!")
+
+
 
 nivel = input("Qual o nível de dificuldade você escolhe? 'Easy' ou 'Hard'?\n").lower()
 
