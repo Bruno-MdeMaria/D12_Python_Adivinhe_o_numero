@@ -3,6 +3,10 @@ from art import logo
 
 def num_mente():
     return random.randint(1,100)
+def dificuldade(nivel):
+    if nivel == "easy":
+        return 10
+    else: return 5
 
 print(logo)
 print("\nBem vindo ao jogo Adivinhe o Número!")
@@ -10,15 +14,13 @@ print("Estou pensando em número de 1 a 100. Tente adivinhar!")
 
 nivel = input("Qual o nível de dificuldade você escolhe? 'Easy' ou 'Hard'?\n").lower()
 
-if nivel == "easy":
-    tentativas = 10
-else: tentativas = 5
-
 numero = num_mente()
-print(numero)  #MOMMENTO
+#print(numero)  #TEMP
 
 continuar = True
+tentativas = dificuldade(nivel)
 while continuar == True:
+    
     palpite = int(input(f"\nVocê tem {tentativas} tentativas.\nDiga um número: "))
 
     if palpite != numero:
@@ -29,7 +31,7 @@ while continuar == True:
              print(f"\nO número que pensei é MAIOR que {palpite}.😁")
         if tentativas == 0:
              continuar = False
-             print("Você zerou suas tentativas. Você perdeu!😭")
+             print("Você zerou suas tentativas.😱\nVocê perdeu!😭")
     else: 
         continuar = False
         print("Você acertou!😎")   
